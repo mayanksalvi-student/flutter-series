@@ -5,6 +5,9 @@ import 'package:first_project/Widgets/13_padding.dart';
 import 'package:first_project/Widgets/12_list_generate.dart';
 import 'package:first_project/Widgets/11_list_view_separated.dart';
 import 'package:first_project/Widgets/10_list_view_builder.dart';
+import 'package:first_project/Widgets/17_drawer.dart';
+import 'package:first_project/Widgets/18_bottom_navigation_bar_with_widget_list.dart';
+import 'package:first_project/Widgets/19_bottom_navigation_bar_with_pageview.dart';
 import 'package:first_project/Widgets/9_list_view.dart';
 import 'package:first_project/Widgets/8_card_and_list_tile.dart';
 import 'package:first_project/Widgets/7_buttons.dart';
@@ -49,10 +52,15 @@ class Home extends StatelessWidget {
     'Stack and Positioned': const StackAndPositionedWidget(),
     'Snackbar Example': const SnackbarExample(),
     'Dismissible Widget': const DismissibleWidget(),
+    'Drawer Example': DrawerExampe(),
+    'BottomNavWithWidgetList Example': const BottomNavWithWidgetList(),
+    'BottomNavWithPageView Example': const BottomNavWithPageView(),
   };
 
   late List<String> keys;
   late List<dynamic> values;
+
+  Home({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +72,7 @@ class Home extends StatelessWidget {
         itemCount: widgetMap.length,
         itemBuilder: (context, index) {
           final key = '$index. ${keys[index]}';
-          return addButton(
+          return AddButton(
             buttonText: key,
             routeClass: values[index],
           );
@@ -77,10 +85,10 @@ class Home extends StatelessWidget {
   }
 }
 
-class addButton extends StatelessWidget {
+class AddButton extends StatelessWidget {
   final Widget routeClass;
   final String buttonText;
-  const addButton(
+  const AddButton(
       {super.key, required this.buttonText, required this.routeClass});
 
   @override
