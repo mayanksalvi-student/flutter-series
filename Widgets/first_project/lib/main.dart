@@ -41,9 +41,9 @@ class Home extends StatelessWidget {
     'Row, Column and Wrap Widget': const RowColumnAndWrapWidgets(),
     'Buttons Example': const ButtonsExample(),
     'Card and List Widget': const CardAndListTileWidget(),
-    'List View Widget': const ListViewWidget(),
-    'List View Builder Widget': const ListViewBuilderWidget(),
-    'ListView Separated Widget': const SeparatedListViewWidget(),
+    'ListView Widget': const ListViewWidget(),
+    'ListView.Builder Example': const ListViewBuilderWidget(),
+    'ListView.Separated Example': const SeparatedListViewWidget(),
     'ListView.generate ': const GenerateListExample(),
     'Padding Widget': const PaddingWidget(),
     'Stack and Positioned': const StackAndPositionedWidget(),
@@ -60,13 +60,17 @@ class Home extends StatelessWidget {
     values = widgetMap.values.toList();
     return Scaffold(
       appBar: AppBar(title: const Text('All Widgets')),
-      body: ListView.builder(
+      body: ListView.separated(
         itemCount: widgetMap.length,
         itemBuilder: (context, index) {
+          final key = '$index. ${keys[index]}';
           return addButton(
-            buttonText: keys[index],
+            buttonText: key,
             routeClass: values[index],
           );
+        },
+        separatorBuilder: (context, index) {
+          return const Divider();
         },
       ),
     );
