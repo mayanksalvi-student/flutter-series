@@ -11,14 +11,14 @@ class AlignWidgetExample extends StatelessWidget {
         child: Container(
           height: 200,
           width: 200,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               color: Colors.white,
               shape: BoxShape.circle,
               boxShadow: [
                 BoxShadow(
                     offset: Offset(1, 2), blurRadius: 20, color: Colors.grey)
               ]),
-          child: Align(
+          child: const Align(
             // alignment: Alignment.bottomCenter,
             // alignment: Alignment.bottomLeft,
             // alignment: Alignment.bottomRight,
@@ -29,13 +29,11 @@ class AlignWidgetExample extends StatelessWidget {
             // alignment: Alignment.topLeft,
             // alignment: Alignment.topRight,
 
-            alignment: const FractionalOffset(0.2, 0.6),
-            child: IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.person_4_rounded,
-                  size: 60,
-                )),
+            alignment: FractionalOffset(0.2, 0.6),
+            child: Icon(
+              Icons.person_4_rounded,
+              size: 60,
+            ),
           ),
         ),
       ),
