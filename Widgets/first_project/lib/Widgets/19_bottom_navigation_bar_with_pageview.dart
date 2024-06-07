@@ -11,13 +11,6 @@ class _BottomNavWithPageViewState extends State<BottomNavWithPageView> {
   int selectedNavIndex = 0;
   PageController pageController = PageController();
 
-  // List<Widget> widgets = [
-  //   Text('HOME'),
-  //   Text('SEARCH'),
-  //   Text('ADD'),
-  //   Text('PROFILE'),
-  // ];
-
   void onNavItemTapped(int index) {
     setState(() {
       selectedNavIndex = index;
